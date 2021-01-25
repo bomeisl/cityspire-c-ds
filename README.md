@@ -48,5 +48,5 @@ The pickled Nearest Neighbors model and TFIDF Vectorizer are imported into recom
 
 | John Dailey | Neha Kumari  | Theda | Mickey Wells |
 | :---------: | :--------: | :--------: | :----------: |
-| Machine Learning | Machine Learning | Data Engineer | Data Engineer |
+| Data Scientist | Data Scientist | Data Scientist | Data Scientist |
 | [<img src="https://github.com/favicon.ico" width="15">](https://github.com/johnjdailey) [<img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15">](https://www.linkedin.com/in/johnjdailey/) | [<img src="https://github.com/favicon.ico" width="15">](https://github.com/Neha-kumari31) [<img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15">](https://www.linkedin.com/in/neha-kumari-3325ba40/) | [<img src="https://github.com/favicon.ico" width="15">](https://github.com/LambdaTheda) [<img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15">](https://www.linkedin.com/) | [<img src="https://github.com/favicon.ico" width="15">](https://github.com/MickeyLeewells2020/) [<img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15">](https://www.linkedin.com/) |
