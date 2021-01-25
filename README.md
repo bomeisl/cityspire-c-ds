@@ -28,7 +28,7 @@ machine learning model and returns the resulting recommendations.
 | Type | Endpoint | Required Parameters | Returns |
 | ---- | -------- | ---------- | ------- |
 | GET  | /labels  |            | {'livability score': 100, 'rent rate': 500} |
-| POST | /recommends | {'livability score': 100, 'rent rate': 500} | {'crime rate': 8000} |
+| POST | /recommends | {'livability score': 100, 'rent rate': 1000} | {'Location': Miami Beach} |
 
 More details about the API endpoints can be found at the
 [ReDoc](https://blahblahblah.herokuapp.com/redoc) interface or by
