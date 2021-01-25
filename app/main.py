@@ -16,7 +16,7 @@ To use these interactive docs:
 """
 
 app = FastAPI(
-    title='DS API',
+    title='cityspire-c-ds API',
     description=description,
     docs_url='/',
 )
