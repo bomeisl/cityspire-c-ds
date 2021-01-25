@@ -1,5 +1,5 @@
 ,City,Zip Code,Walk Score,Transit Score,Bike Score,Population,State
-0,Birmingham (the largest city in Alabama),35211.0,35,25,31,212237,AL
+0,Birmingham,35211.0,35,25,31,212237,AL
 1,Montgomery,36109.0,26,16,38,205764,AL
 2,Mobile,36605.0,32,--,39,195111,AL
 3,Huntsville,35810.0,24,13,40,180105,AL
@@ -38,7 +38,7 @@
 1,Fairbanks,,33,24,57,31535,AK
 2,Juneau,,22,18,35,31275,AK
 3,Badger,,2,--,35,19482,AK
-0,Phoenix (the largest city in Arizona),85032.0,41,36,56,1445632,AZ
+0,Phoenix,85032.0,41,36,56,1445632,AZ
 1,Tucson,85710.0,42,35,67,520116,AZ
 2,Mesa,85204.0,37,27,61,439041,AZ
 3,Chandler,85225.0,35,24,57,236123,AZ
@@ -84,7 +84,7 @@
 43,Douglas,,41,--,49,17378,AZ
 44,Tanque Verde,,4,--,29,16901,AZ
 45,Eloy,,14,--,35,16631,AZ
-0,Little Rock (the largest city in Arkansas),72209.0,32,19,32,193524,AR
+0,Little Rock,72209.0,32,19,32,193524,AR
 1,Fort Smith,72903.0,35,--,38,86209,AR
 2,Fayetteville,,32,--,50,73580,AR
 3,Springdale,,26,--,39,69797,AR
@@ -109,7 +109,7 @@
 22,El Dorado,,31,--,38,18884,AR
 23,Maumelle,,15,--,44,17163,AR
 24,Bryant,72022.0,16,--,31,16688,AR
-0,Los Angeles (the largest city in California),90011.0,68,53,59,3792621,CA
+0,Los Angeles,90011.0,68,53,59,3792621,CA
 1,San Diego,92126.0,51,37,43,1307402,CA
 2,San Jose,95123.0,49,41,62,945942,CA
 3,San Francisco,94112.0,87,80,72,805235,CA
@@ -481,7 +481,7 @@
 369,Nipomo,,24,--,31,16714,CA
 370,El Segundo,90245.0,65,--,49,16654,CA
 371,Artesia,90701.0,78,38,60,16522,CA
-0,Denver (the largest city in Colorado),80219.0,61,47,73,600158,CO
+0,Denver,80219.0,61,47,73,600158,CO
 1,Colorado Springs,80918.0,35,19,45,416427,CO
 2,Aurora,80013.0,43,38,55,325078,CO
 3,Fort Collins,,37,29,78,143986,CO
@@ -522,7 +522,7 @@
 38,Sherrelwood,,40,33,39,18287,CO
 39,Erie,,11,--,44,18135,CO
 40,Durango,,38,--,51,16887,CO
-0,Bridgeport (the largest city in Connecticut),6606.0,67,40,52,144229,CT
+0,Bridgeport,6606.0,67,40,52,144229,CT
 1,New Haven,6511.0,68,48,68,129779,CT
 2,Hartford,6106.0,71,54,57,124775,CT
 3,Stamford,6902.0,54,46,46,122643,CT
@@ -560,7 +560,7 @@
 3,Bear,,27,--,37,19371,DE
 4,Middletown,,29,--,42,18871,DE
 0,Washington D.C.,,76,71,69,601723,DC
-0,Jacksonville (the largest city in Florida),32210.0,26,23,43,821784,FL
+0,Jacksonville,32210.0,26,23,43,821784,FL
 1,Miami,33125.0,78,57,65,399457,FL
 2,Tampa,33604.0,49,34,57,335709,FL
 3,St. Petersburg,33710.0,44,35,61,244769,FL
@@ -762,7 +762,7 @@
 199,Safety Harbor,34695.0,22,19,44,16884,FL
 200,San Carlos Park,,14,--,37,16824,FL
 201,Punta Gorda,,15,--,42,16641,FL
-0,Atlanta (the largest city in Georgia),30318.0,48,47,45,420003,GA
+0,Atlanta,30318.0,48,47,45,420003,GA
 1,Augusta-Richmond County,30906.0,22,--,33,195844,GA
 2,Columbus,31907.0,26,--,31,189885,GA
 3,Savannah,,43,--,53,136286,GA
@@ -819,7 +819,7 @@
 54,St. Marys,,11,--,36,17121,GA
 55,Americus,,25,--,36,17041,GA
 56,North Decatur,,43,34,41,16698,GA
-0,Honolulu (the largest city in Hawaii),96817.0,65,57,51,337256,HI
+0,Honolulu,96817.0,65,57,51,337256,HI
 1,East Honolulu,96825.0,20,34,22,49914,HI
 2,Pearl City,,26,37,23,47698,HI
 3,Hilo,,23,--,31,43263,HI
@@ -833,7 +833,7 @@
 11,Kihei,,42,--,47,20881,HI
 12,Makakilo,,12,33,7,18248,HI
 13,Wahiawa,,40,36,34,17821,HI
-0,Boise City (the largest city in Idaho),83704.0,39,23,62,205671,ID
+0,Boise City,83704.0,39,23,62,205671,ID
 1,Nampa,,30,--,46,81557,ID
 2,Meridian,,26,--,41,75092,ID
 3,Idaho Falls,,40,--,51,56813,ID
@@ -846,7 +846,7 @@
 10,Rexburg,,44,--,56,25484,ID
 11,Moscow,,47,--,55,23800,ID
 12,Eagle,,18,--,38,19908,ID
-0,Chicago (the largest city in Illinois),60629.0,77,65,73,2695598,IL
+0,Chicago,60629.0,77,65,73,2695598,IL
 1,Aurora,60505.0,40,22,54,197899,IL
 2,Rockford,61104.0,42,--,46,152871,IL
 3,Joliet,,35,17,46,147433,IL
@@ -998,7 +998,7 @@
 149,North Aurora,60542.0,19,--,44,16760,IL
 150,Westchester,60154.0,41,31,47,16718,IL
 151,Country Club Hills,,31,--,39,16541,IL
-0,Indianapolis (the largest city in Indiana),46227.0,31,23,45,820445,IN
+0,Indianapolis,46227.0,31,23,45,820445,IN
 1,Fort Wayne,46815.0,30,22,47,253691,IN
 2,Evansville,47714.0,42,--,47,117429,IN
 3,South Bend,46615.0,43,--,60,101168,IN
@@ -1049,7 +1049,7 @@
 48,Seymour,,39,--,48,17503,IN
 49,Huntington,,41,--,43,17391,IN
 50,Griffith,,40,--,50,16893,IN
-0,Des Moines (the largest city in Iowa),50315.0,45,30,42,203433,IA
+0,Des Moines,50315.0,45,30,42,203433,IA
 1,Cedar Rapids,52402.0,34,20,41,126326,IA
 2,Davenport,52806.0,41,--,43,99685,IA
 3,Sioux City,51104.0,41,24,36,82684,IA
@@ -1073,7 +1073,7 @@
 21,Muscatine,,38,22,41,22886,IA
 22,Coralville,52241.0,32,21,47,18907,IA
 23,Johnston,,19,--,32,17278,IA
-0,Wichita (the largest city in Kansas),67212.0,35,20,48,382368,KS
+0,Wichita,67212.0,35,20,48,382368,KS
 1,Overland Park,66212.0,35,16,48,173372,KS
 2,Kansas City,66102.0,33,22,28,145786,KS
 3,Topeka,66604.0,36,24,56,127473,KS
@@ -1097,7 +1097,7 @@
 21,Pittsburg,,36,--,52,20233,KS
 22,Newton,,34,--,49,19132,KS
 23,Gardner,,23,--,39,19123,KS
-0,Louisville-Jefferson (the largest city in Kentucky),40214.0,34,28,43,597337,KY
+0,Louisville-Jefferson,40214.0,34,28,43,597337,KY
 1,Lexington-Fayette,40517.0,34,24,46,295803,KY
 2,Bowling Green,,39,--,42,58067,KY
 3,Owensboro,,36,--,50,57265,KY
@@ -1120,7 +1120,7 @@
 20,Erlanger,,22,16,23,18082,KY
 21,Murray,,33,--,43,17741,KY
 22,St. Matthews,,48,36,49,17472,KY
-0,New Orleans (the largest city in Louisiana),70119.0,59,44,66,343829,LA
+0,New Orleans,70119.0,59,44,66,343829,LA
 1,Baton Rouge,70808.0,41,--,47,229493,LA
 2,Shreveport,71105.0,31,--,41,199311,LA
 3,Metairie,70003.0,54,--,50,138481,LA
@@ -1148,7 +1148,7 @@
 25,Gretna,70053.0,64,--,56,17736,LA
 26,Chalmette,,46,--,46,16751,LA
 27,Opelousas,,46,--,53,16634,LA
-0,Portland (the largest city in Maine),4103.0,61,4,68,66194,ME
+0,Portland,4103.0,61,4,68,66194,ME
 1,Lewiston,4240.0,45,--,42,36592,ME
 2,Bangor,,41,--,39,33039,ME
 3,South Portland,4106.0,41,--,62,25002,ME
@@ -1157,7 +1157,7 @@
 6,Augusta,,25,--,30,19136,ME
 7,Saco,4072.0,23,--,40,18482,ME
 8,Westbrook,4092.0,32,--,47,17494,ME
-0,Baltimore (the largest city in Maryland),21215.0,65,57,56,620961,MD
+0,Baltimore,21215.0,65,57,56,620961,MD
 1,Columbia,21044.0,32,27,34,99615,MD
 2,Germantown,,36,37,47,86395,MD
 3,Silver Spring,20910.0,61,64,59,71452,MD
@@ -1235,7 +1235,7 @@
 75,Beltsville,,39,29,43,16772,MD
 76,Ferndale,,36,35,39,16746,MD
 77,Takoma Park,,69,61,68,16715,MD
-0,Boston (the largest city in Massachusetts),2124.0,82,72,70,617594,MA
+0,Boston,2124.0,82,72,70,617594,MA
 1,Worcester,1604.0,56,33,38,181045,MA
 2,Springfield,1109.0,59,43,50,153060,MA
 3,Lowell,1852.0,64,39,46,106519,MA
@@ -1307,7 +1307,7 @@
 69,Greenfield Town,,39,--,38,17456,MA
 70,Newburyport,1950.0,50,--,45,17416,MA
 71,Southbridge Town,1550.0,41,--,29,16719,MA
-0,Detroit (the largest city in Michigan),48228.0,53,39,55,713777,MI
+0,Detroit,48228.0,53,39,55,713777,MI
 1,Grand Rapids,49504.0,57,40,53,188040,MI
 2,Warren,48089.0,43,--,46,134056,MI
 3,Sterling Heights,48310.0,32,--,40,129699,MI
@@ -1372,7 +1372,7 @@
 62,Wayne,,42,--,45,17593,MI
 63,Allendale,,20,--,36,17579,MI
 64,Jenison,,19,--,40,16538,MI
-0,Minneapolis (the largest city in Minnesota),55407.0,70,57,84,382578,MN
+0,Minneapolis,55407.0,70,57,84,382578,MN
 1,St. Paul,55106.0,60,48,67,285068,MN
 2,Rochester,,30,--,57,106769,MN
 3,Duluth,55812.0,35,34,43,86265,MN
@@ -1435,7 +1435,7 @@
 60,Albert Lea,,29,--,43,18016,MN
 61,Hopkins,,57,34,71,17591,MN
 62,Anoka,,40,25,55,17142,MN
-0,Jackson (the largest city in Mississippi),39212.0,28,20,38,173514,MS
+0,Jackson,39212.0,28,20,38,173514,MS
 1,Gulfport,39501.0,23,--,41,67793,MS
 2,Southaven,38671.0,17,--,30,48982,MS
 3,Hattiesburg,,36,--,51,45989,MS
@@ -1459,7 +1459,7 @@
 21,Laurel,,34,--,41,18540,MS
 22,Clarksdale,,33,--,46,17962,MS
 23,Ocean Springs,,25,--,41,17442,MS
-0,Kansas City (the largest city in Missouri),64114.0,35,29,35,459787,MO
+0,Kansas City,64114.0,35,29,35,459787,MO
 1,St. Louis,63116.0,65,45,62,319294,MO
 2,Springfield,65804.0,38,--,53,159498,MO
 3,Independence,64055.0,26,20,28,116830,MO
@@ -1507,14 +1507,14 @@
 45,Kirksville,,41,--,53,17505,MO
 46,Poplar Bluff,,34,--,37,17023,MO
 47,Lemay,,44,29,44,16645,MO
-0,Billings (the largest city in Montana),59102.0,35,--,47,104170,MT
+0,Billings,59102.0,35,--,47,104170,MT
 1,Missoula,59801.0,46,34,60,66788,MT
 2,Great Falls,59401.0,44,--,47,58505,MT
 3,Bozeman,,48,20,62,37280,MT
 4,Butte-Silver Bow,,40,17,45,33525,MT
 5,Helena,,50,--,44,28190,MT
 6,Kalispell,,41,--,48,19927,MT
-0,Omaha (the largest city in Nebraska),68104.0,47,27,44,408958,NE
+0,Omaha,68104.0,47,27,44,408958,NE
 1,Lincoln,68521.0,43,24,61,258379,NE
 2,Bellevue,,31,--,30,50137,NE
 3,Grand Island,,40,--,52,48520,NE
@@ -1525,7 +1525,7 @@
 8,Norfolk,,43,--,45,24210,NE
 9,Columbus,,43,--,48,22111,NE
 10,Papillion,,39,--,45,18894,NE
-0,Las Vegas (the largest city in Nevada),89108.0,41,34,46,583756,NV
+0,Las Vegas,89108.0,41,34,46,583756,NV
 1,Henderson,89074.0,29,24,44,257729,NV
 2,Reno,89509.0,38,28,52,225221,NV
 3,Paradise,89119.0,48,38,54,223167,NV
@@ -1542,7 +1542,7 @@
 14,Fernley,,16,--,37,19368,NV
 15,Sun Valley,89433.0,20,21,34,19299,NV
 16,Elko,,36,--,40,18297,NV
-0,Manchester (the largest city in New Hampshire),3103.0,49,--,42,109565,NH
+0,Manchester,3103.0,49,--,42,109565,NH
 1,Nashua,3060.0,38,--,38,86494,NH
 2,Concord,3301.0,36,--,37,42695,NH
 3,Dover,,32,--,36,29987,NH
@@ -1550,7 +1550,7 @@
 5,Keene,,43,--,51,23409,NH
 6,Derry,,29,--,38,22015,NH
 7,Portsmouth,,47,--,48,20779,NH
-0,Newark (the largest city in New Jersey),7104.0,79,65,61,277140,NJ
+0,Newark,7104.0,79,65,61,277140,NJ
 1,Jersey City,7305.0,87,71,70,247597,NJ
 2,Paterson,7501.0,78,48,48,146199,NJ
 3,Elizabeth,7202.0,81,43,56,124969,NJ
@@ -1611,7 +1611,7 @@
 58,Lindenwold,,44,29,48,17613,NJ
 59,Dumont,7628.0,58,47,47,17479,NJ
 60,Avenel,7001.0,46,31,42,17011,NJ
-0,Albuquerque (the largest city in New Mexico),87120.0,42,30,62,545852,NM
+0,Albuquerque,87120.0,42,30,62,545852,NM
 1,Las Cruces,,35,--,46,97618,NM
 2,Rio Rancho,,16,--,32,87521,NM
 3,Santa Fe,,40,--,50,67947,NM
@@ -1623,7 +1623,7 @@
 9,Alamogordo,,26,--,41,30403,NM
 10,Carlsbad,,36,--,50,26138,NM
 11,Gallup,,28,--,33,21678,NM
-0,New York (the largest city in New York),11368.0,88,84,70,8175133,NY
+0,New York,11368.0,88,84,70,8175133,NY
 1,Buffalo,14213.0,68,49,65,261310,NY
 2,Rochester,14621.0,65,43,61,210565,NY
 3,Yonkers,10701.0,70,54,39,195976,NY
@@ -1734,7 +1734,7 @@
 108,Massapequa Park,,43,28,50,17008,NY
 109,Sayville,,35,--,39,16853,NY
 110,North Valley Stream,,62,38,49,16628,NY
-0,Charlotte (the largest city in North Carolina),28269.0,26,29,34,731424,NC
+0,Charlotte,28269.0,26,29,34,731424,NC
 1,Raleigh,27612.0,31,30,41,403892,NC
 2,Greensboro,27401.0,29,--,35,269666,NC
 3,Winston-Salem,27106.0,23,--,29,229617,NC
@@ -1786,14 +1786,14 @@
 49,Fuquay-Varina,,20,--,30,17937,NC
 50,Boone,,49,--,26,17122,NC
 51,Morganton,,25,--,24,16918,NC
-0,Fargo (the largest city in North Dakota),58103.0,44,25,50,105549,ND
+0,Fargo,58103.0,44,25,50,105549,ND
 1,Bismarck,,36,--,40,61272,ND
 2,Grand Forks,,48,--,61,52838,ND
 3,Minot,,39,--,38,40888,ND
 4,West Fargo,,28,--,39,25830,ND
 5,Mandan,,27,--,32,18331,ND
 6,Dickinson,,34,--,39,17787,ND
-0,Columbus (the largest city in Ohio),43229.0,40,33,50,787033,OH
+0,Columbus,43229.0,40,33,50,787033,OH
 1,Cleveland,44102.0,60,45,55,396815,OH
 2,Cincinnati,45205.0,50,44,43,296943,OH
 3,Toledo,43613.0,45,--,50,287208,OH
@@ -1907,7 +1907,7 @@
 111,Mount Vernon,,41,--,44,16990,OH
 112,Fairview Park,44126.0,39,28,42,16826,OH
 113,Fremont,,44,--,50,16734,OH
-0,Oklahoma City (the largest city in Oklahoma),73170.0,34,16,43,579999,OK
+0,Oklahoma City,73170.0,34,16,43,579999,OK
 1,Tulsa,74133.0,39,23,47,391906,OK
 2,Norman,73071.0,31,--,58,110925,OK
 3,Broken Arrow,74012.0,22,10,35,98850,OK
@@ -1937,7 +1937,7 @@
 27,Jenks,74037.0,15,4,39,16924,OK
 28,Ada,,32,--,38,16810,OK
 29,El Reno,,29,--,38,16749,OK
-0,Portland (the largest city in Oregon),97206.0,67,52,82,583776,OR
+0,Portland,97206.0,67,52,82,583776,OR
 1,Eugene,97401.0,45,36,72,156185,OR
 2,Salem,,42,31,62,154637,OR
 3,Gresham,97030.0,45,40,65,105594,OR
@@ -1974,7 +1974,7 @@
 34,Hermiston,,43,--,43,16745,OR
 35,Oak Grove,,48,38,65,16629,OR
 36,Pendleton,,35,--,32,16612,OR
-0,Philadelphia (the largest city in Pennsylvania),19120.0,79,67,67,1526006,PA
+0,Philadelphia,19120.0,79,67,67,1526006,PA
 1,Pittsburgh,15213.0,63,56,57,305704,PA
 2,Allentown,18102.0,70,36,44,118032,PA
 3,Erie,16504.0,59,--,54,101786,PA
@@ -2011,7 +2011,7 @@
 34,Upper St. Clair,15241.0,14,--,10,19229,PA
 35,Carlisle,,60,--,62,18682,PA
 36,West Chester,,76,--,50,18461,PA
-0,Providence (the largest city in Rhode Island),2909.0,78,48,62,178042,RI
+0,Providence,2909.0,78,48,62,178042,RI
 1,Warwick,2886.0,34,26,40,82672,RI
 2,Cranston,2920.0,49,30,46,80387,RI
 3,Pawtucket,2860.0,69,37,52,71148,RI
@@ -2020,7 +2020,7 @@
 6,Newport,2840.0,65,31,54,24672,RI
 7,Central Falls,2863.0,79,34,52,19376,RI
 8,Westerly,,34,4,34,17936,RI
-0,Columbia (the largest city in South Carolina),29205.0,38,0,38,129272,SC
+0,Columbia,29205.0,38,0,38,129272,SC
 1,Charleston,29407.0,40,23,52,120083,SC
 2,North Charleston,29405.0,27,--,41,97471,SC
 3,Mount Pleasant,,20,--,39,67843,SC
@@ -2053,7 +2053,7 @@
 2,Aberdeen,,35,--,66,26091,SD
 3,Brookings,,39,--,58,22056,SD
 4,Watertown,,35,--,50,21482,SD
-0,Memphis (the largest city in Tennessee),38109.0,36,--,44,646889,TN
+0,Memphis,38109.0,36,--,44,646889,TN
 1,Nashville-Davidson,37013.0,28,24,30,601222,TN
 2,Knoxville,37917.0,31,28,30,178874,TN
 3,Chattanooga,37411.0,29,25,35,167674,TN
@@ -2086,7 +2086,7 @@
 30,Shelbyville,,24,--,36,20335,TN
 31,Tullahoma,,20,--,37,18655,TN
 32,Dyersburg,,28,--,38,17145,TN
-0,Houston (the largest city in Texas),77036.0,48,37,51,2099451,TX
+0,Houston,77036.0,48,37,51,2099451,TX
 1,San Antonio,78228.0,35,36,45,1327407,TX
 2,Dallas,75217.0,46,40,51,1197816,TX
 3,Austin,78745.0,41,34,54,790390,TX
@@ -2244,7 +2244,7 @@
 155,Bellaire,77401.0,52,46,50,16855,TX
 156,Mineral Wells,,19,--,39,16788,TX
 157,Horizon City,,23,--,35,16735,TX
-0,Salt Lake City (the largest city in Utah),84116.0,59,44,73,186440,UT
+0,Salt Lake City,84116.0,59,44,73,186440,UT
 1,West Valley City,84120.0,35,36,43,129480,UT
 2,Provo,84601.0,47,34,63,112488,UT
 3,West Jordan,84088.0,27,29,40,103712,UT
@@ -2290,7 +2290,7 @@
 43,South Ogden,,40,34,39,16532,UT
 0,Burlington,,59,37,78,42417,VT
 1,South Burlington,,27,--,53,17904,VT
-0,Virginia Beach (the largest city in Virginia),23464.0,32,21,44,437994,VA
+0,Virginia Beach,23464.0,32,21,44,437994,VA
 1,Norfolk,23503.0,45,36,51,242803,VA
 2,Chesapeake,23322.0,21,13,40,222209,VA
 3,Arlington,22204.0,69,62,72,207627,VA
@@ -2357,7 +2357,7 @@
 64,Burke Centre,,38,22,38,17326,VA
 65,Idylwood,,42,37,43,17288,VA
 66,Laurel,,31,--,37,16713,VA
-0,Seattle (the largest city in Washington),98115.0,74,60,70,608660,WA
+0,Seattle,98115.0,74,60,70,608660,WA
 1,Spokane,99205.0,49,36,52,208916,WA
 2,Tacoma,98406.0,53,--,49,198397,WA
 3,Vancouver,98683.0,40,34,61,161791,WA
@@ -2436,7 +2436,7 @@
 76,Aberdeen,,47,--,43,16896,WA
 77,Bothell West,,14,--,27,16607,WA
 78,North Lynnwood,,38,--,44,16574,WA
-0,Charleston (the largest city in West Virginia),25301.0,32,--,28,51400,WV
+0,Charleston,25301.0,32,--,28,51400,WV
 1,Huntington,25703.0,48,--,44,49138,WV
 2,Parkersburg,,45,--,37,31492,WV
 3,Morgantown,,54,--,41,29660,WV
@@ -2446,7 +2446,7 @@
 7,Beckley,,34,--,27,17614,WV
 8,Martinsburg,,48,--,39,17227,WV
 9,Clarksburg,,40,--,28,16578,WV
-0,Milwaukee (the largest city in Wisconsin),53215.0,63,48,59,594833,WI
+0,Milwaukee,53215.0,63,48,59,594833,WI
 1,Madison,53703.0,48,39,65,233209,WI
 2,Green Bay,54302.0,41,28,49,104057,WI
 3,Kenosha,53143.0,45,--,49,99218,WI
