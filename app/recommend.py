@@ -1,6 +1,8 @@
-#recommend.py
+#app/ecommend.py
 
 
+
+# Imports
 
 from os import path
 import pandas as pd

@@ -1,12 +1,19 @@
+#app/main.py
+
+
+
+#Imports
+
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 import uvicorn
 
 from app import db, ml, viz
 
-description = """
-Edit your app's title and description. See [https://fastapi.tiangolo.com/tutorial/metadata/](https://fastapi.tiangolo.com/tutorial/metadata/)
 
+#Edit your app's title and description. See [https://fastapi.tiangolo.com/tutorial/metadata/](https://fastapi.tiangolo.com/tutorial/metadata/)
+
+description = """
 To use these interactive docs:
 - Click on an endpoint below
 - Click the **Try it out** button
@@ -15,15 +22,23 @@ To use these interactive docs:
 - Scroll down to see the Server response Code & Details
 """
 
+# App
+
 app = FastAPI(
     title='cityspire-c-ds API',
     description=description,
     docs_url='/',
 )
 
+
+# Include routers
+
 app.include_router(db.router, tags=['Database'])
 app.include_router(ml.router, tags=['Machine Learning'])
 app.include_router(viz.router, tags=['Visualization'])
+
+
+# Add CORSMiddleware for interoperability
 
 app.add_middleware(
     CORSMiddleware,
@@ -32,6 +47,8 @@ app.add_middleware(
     allow_methods=['*'],
     allow_headers=['*'],
 )
+
+# For running the app with uvicorn, "if name = main"
 
 if __name__ == '__main__':
     uvicorn.run(app)
