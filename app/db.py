@@ -6,6 +6,7 @@ from dotenv import load_dotenv
 from fastapi import APIRouter, Depends
 import sqlalchemy
 
+
 router = APIRouter()
 
 
@@ -18,7 +19,7 @@ async def get_db() -> sqlalchemy.engine.base.Connection:
     Otherwise uses a SQLite database for initial local development.
     """
     load_dotenv()
-    database_url = os.getenv('DATABASE_URL')#, default='sqlite:///temporary.db')
+    database_url = os.getenv('DATABASE_URL', default='sqlite:///temporary.db')
     engine = sqlalchemy.create_engine(database_url)
     connection = engine.connect()
     try:
