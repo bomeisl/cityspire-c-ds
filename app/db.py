@@ -30,12 +30,13 @@ DB_NAME = os.getenv("DB_NAME")
 DB_USER = os.getenv("DB_USER")
 DB_PASSWORD = os.getenv("DB_PASSWORD")
 
-DATABASE_URL = os.environ["DATABASE_URL"]
+#DATABASE_URL = os.environ["DATABASE_URL"]
+DATABASE_URL = os.getenv("DATABASE_URL")
 
 
 # Connect to PG DB with Heroku (currently hosted on ElephantSQL, which hosts on AWS)
 
-connection = psycopg2.connect(DATABASE_URL, sslmode='require')
+connection = psycopg2.connect(DATABASE_URL)
 
 # This works to connect locally (currently hosted on ElephantSQL, which hosts on AWS)
 
