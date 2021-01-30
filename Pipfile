@@ -11,6 +11,9 @@ pytest = "*"
 fastapi = "*"
 uvicorn = {extras = ["standard"], version = "*"}
 sqlalchemy = "*"
+psycopg2-binary = "*"
+numpy = "*"
+joblib = "==1.0.0"
 
 [requires]
 python_version = "3"
