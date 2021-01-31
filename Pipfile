@@ -1,23 +1,20 @@
 [[source]]
+name = "pypi"
 url = "https://pypi.org/simple"
 verify_ssl = true
-name = "pypi"
-
-[packages]
-fastapi = "*"
-uvicorn = {extras = ["standard"], version = "*"}
-psycopg2-binary = "*"
-websockets = "*"
-scikit-learn = "*"
-jupyter = "*"
-pytest = "*"
-dataclasses = "*"
-SQLAlchemy = "*"
-alembic = "*"
 
 [dev-packages]
 jupyter = "*"
 pytest = "*"
 
+[packages]
+fastapi = "*"
+uvicorn = {extras = ["standard"], version = "*"}
+sqlalchemy = "*"
+psycopg2-binary = "*"
+numpy = "*"
+joblib = "==1.0.0"
+
 [requires]
-python_version = "3.9"
+python_version = "3"
+
