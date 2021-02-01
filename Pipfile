@@ -5,6 +5,7 @@ name = "pypi"
 
 [packages]
 pandas = "*"
+numpy = "*"
 fastapi = "*"
 uvicorn = "*"
 psycopg2-binary = "*"
@@ -15,8 +16,11 @@ pytest = "*"
 dataclasses = "*"
 python-dotenv = "*"
 SQLAlchemy = "*"
+joblib = "*"
 
 [dev-packages]
+jupyter = "*"
+pytest ="*"
 
 [requires]
 python_version = "3.9"
