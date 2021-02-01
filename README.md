@@ -25,6 +25,20 @@ provides 2 routes. One route, `/labels`, provides the labels a user can select
 to distinguish cities. The `/recommends` endpoint routes user input to the
 machine learning model and returns the resulting recommendations.
 
+A single endpoint that returns all data for a city in one object. 
+
+Call an endpoint with a city request parameter, something like:
+GET .../cities/the-big-city
+
+then get a single object in return, something like:
+{
+   city_name: 'the-big-city',
+   population: 1000000,
+   rent_per_month: 1500,
+   walk_score: {Idk what this should look like, up to you guys, just let us know},
+   livability_score: {up to you as well}
+}
+
 | Type | Endpoint | Required Parameters | Returns |
 | ---- | -------- | ---------- | ------- |
 | GET  | /labels  |            | {'livability score': 100, 'rent rate': 500} |
