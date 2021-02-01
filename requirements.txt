@@ -1,3 +1,4 @@
+pandas
 fastapi
 uvicorn
 sqlalchemy
@@ -7,3 +8,5 @@ scikit-learn
 jupyter
 pytest
 dataclasses
+python-dotenv
+websockets

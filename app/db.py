@@ -25,22 +25,22 @@ router = APIRouter()
 
 load_dotenv()
 
-DB_HOST = os.getenv("DB_HOST")
-DB_NAME = os.getenv("DB_NAME")
-DB_USER = os.getenv("DB_USER")
-DB_PASSWORD = os.getenv("DB_PASSWORD")
+#DB_HOST = os.getenv("DB_HOST")
+#DB_NAME = os.getenv("DB_NAME")
+#DB_USER = os.getenv("DB_USER")
+#DB_PASSWORD = os.getenv("DB_PASSWORD")
 
 #DATABASE_URL = os.environ["DATABASE_URL"]
 DATABASE_URL = os.getenv("DATABASE_URL")
 
 
-# Connect to PG DB with Heroku (Hosted on AWS)
+# Connect to AWS RDS PG DB with FastAPI on Heroku (Hosted on AWS)
 
-#connection = psycopg2.connect(DATABASE_URL)
+connection = psycopg2.connect(DATABASE_URL)
 
 # This works to connect locally (currently hosted on ElephantSQL, which hosts on AWS)
 
-connection = psycopg2.connect(dbname=DB_NAME, user=DB_USER, password=DB_PASSWORD, host=DB_HOST, sslmode="require") #DATABASE_URL
+#connection = psycopg2.connect(dbname=DB_NAME, user=DB_USER, password=DB_PASSWORD, host=DB_HOST, sslmode="require") #DATABASE_URL
 
 
 # Cursor for making SQL queries
