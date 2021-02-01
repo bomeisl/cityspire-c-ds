@@ -4,20 +4,23 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
+pandas = "*"
+numpy = "*"
 fastapi = "*"
-uvicorn = {extras = ["standard"], version = "*"}
+uvicorn = "*"
 psycopg2-binary = "*"
 websockets = "*"
 scikit-learn = "*"
 jupyter = "*"
 pytest = "*"
 dataclasses = "*"
+python-dotenv = "*"
 SQLAlchemy = "*"
-alembic = "*"
+joblib = "*"
 
 [dev-packages]
 jupyter = "*"
-pytest = "*"
+pytest ="*"
 
 [requires]
 python_version = "3.9"
