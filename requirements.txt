@@ -1,6 +1,7 @@
 pandas
 fastapi
 uvicorn
+gunicorn
 sqlalchemy
 psycopg2-binary
 websockets

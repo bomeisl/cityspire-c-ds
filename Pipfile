@@ -17,6 +17,7 @@ dataclasses = "*"
 python-dotenv = "*"
 SQLAlchemy = "*"
 joblib = "*"
+gunicorn = "*"
 
 [dev-packages]
 jupyter = "*"
