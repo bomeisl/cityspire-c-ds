@@ -18,10 +18,12 @@ python-dotenv = "*"
 SQLAlchemy = "*"
 joblib = "*"
 gunicorn = "*"
+plotly = "*"
 
 [dev-packages]
 jupyter = "*"
-pytest ="*"
+pytest = "*"
+requests = "*"
 
 [requires]
 python_version = "3.9"

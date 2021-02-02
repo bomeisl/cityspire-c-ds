@@ -83,12 +83,12 @@ async def get_url(connection=Depends(get_db)):
     return {'database_url': url_without_password}
 
 
-# This looks like trash, but its a start for a more refined serve of data
+# This looks like trash and it is slow, but it is a start for a more refined serve of data
 
 @router.get('/cityspire')
 async def get_table(connection=Depends(get_db)):
-    """Return table of all data from cityspire db"""
-    select_query = "SELECT * from pop_rent_crime_walk_cost_livability_bins"
+    """Return table of all data from CitySpire DB in json object"""
+    select_query = "SELECT * from CitySpire"
     cursor.execute(select_query)
     records = cursor.fetchall()
     cursor.close()
