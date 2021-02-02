@@ -11,3 +11,6 @@ pytest
 dataclasses
 python-dotenv
 websockets
+requests
+plotly
+json
