@@ -6,7 +6,7 @@ import itertools
 
 df = pd.read_csv("cityspire-c-ds/data/pop_rent_crime_walk_cost_livability_bins.csv")
 
-some_values = "Phoenix, Arizona"
+location = "Phoenix, Arizona"
 
 #print(df.loc[df['Location'] == some_values])
 
@@ -16,4 +16,8 @@ some_values = "Phoenix, Arizona"
 
 #print(df[df['Location']==some_values]['2019 Population'])
 
-print(df.loc[df['Location'] == some_values])
+#print(df.loc[df['Location'] == location])
+
+#print(df.loc[df['Location'] == location, '2019 Population'])
+
+print(df[df.Population==location].Location.item())
