@@ -51,25 +51,19 @@ class LocationDataItem(BaseModel):
     walk_score: int = Field(..., example = 98.0)
     livability_score: float = Field(..., example = 1000)
 
-    #location: List[str] = Field(..., example = 'Orlando, Florida')
-    #population: List[int] = Field(..., example = 1000000)
-    #rent_per_month: List[int] = Field(..., example = 1500)
-    #walk_score: List[int] = Field(..., example = 98.0)
-    #livability_score: List[float] = Field(..., example = 1000)
-
 
 # Instantiate LocationDataResponse BaseModel
 
 class LocationDataResponse(BaseModel):
     """Output schema - List of recommended strains."""
 
-    response: List[LocationDataItem] = Field(...)
+    response: LocationDataItem = Field(...)
 
 
 # Router to make GET request for data on specified location
 
-@router.post('/location/data')#, response_model=LocationDataItem)
-async def location_data(location: LocationDataResponse):
+@router.post('/location/data', response_model=LocationDataItem)
+async def location_data(location: LocationDataRequest):
     """
     Route for front end to obtain the data for the Location of choice.
 
@@ -85,10 +79,19 @@ async def location_data(location: LocationDataResponse):
     "livability_score": livability score as a float
     """
 
+    df[df.Population==location].Location.item()
+
     return {
-        'location': df.loc[df['Location'] == location],
-        'population': df.loc[df['Location'] == location, '2019 Population'],
-        'rent_per_month': df.loc[df['Location'] == location, '2019 Rental Rates'],
-        'walk_score': df.loc[df['Location'] == location, 'Walk Score'],
-        'livability_score': df.loc[df['Location'] == location, 'Livability Score']
-        }
+        'location': location,
+        'population': df[df.Population==location].Location.item(),
+        'rent_per_month': df[df.RentalRates==location].Location.item(),
+        'walk_score': df[df.WalkScore==location].Location.item(),
+        'livability_score': df[df.LivabilityScore==location].Location.item()
+    }
+        
+        #'location': str(location),
+        #'population': int(df.loc[df['Location'] == location, '2019 Population']),
+        #'rent_per_month': int(df.loc[df['Location'] == location, '2019 Rental Rates']),
+        #'walk_score': int(df.loc[df['Location'] == location, 'Walk Score']),
+        #'livability_score': float(df.loc[df['Location'] == location, 'Livability Score'])
+        
