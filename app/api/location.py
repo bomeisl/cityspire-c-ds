@@ -111,29 +111,47 @@ async def location_data(location: LocationDataRequest):
     #walk_query = """SELECT "2019 Walk Score" FROM CitySpire WHERE "Location" = %s""", [location]
     #live_query = """SELECT "2019 Livability Score" FROM CitySpire WHERE "Location" = %s""", [location]
 
-    cursor.execute("""SELECT "2019 Population" FROM CitySpire WHERE "Location" = %s""", [location])
-    pop = cursor.fetchall()
-    #pop = pop[0]
+#    cursor.execute("""SELECT "2019 Population" FROM CitySpire WHERE "Location" = %s;""", [location])
+#    pop = cursor.fetchall()
+#    pop = pop[0]
+#
+#    cursor.execute("""SELECT "2019 Rental Rates" FROM CitySpire WHERE "Location" = %s;""", [location])
+#    rent = cursor.fetchall()
+#    rent = rent[0]
+#
+#    cursor.execute("""SELECT "Walk Score" FROM CitySpire WHERE "Location" = %s;""", [location])
+#    walk = cursor.fetchall()
+#    walk = walk[0]
+#
+#    cursor.execute("""SELECT "Livability Score" FROM CitySpire WHERE "Location" = %s;""", [location])
+#    live = cursor.fetchall()
+#    live = live[0]
 
-    cursor.execute("""SELECT "2019 Rental Rates" FROM CitySpire WHERE "Location" = %s""", [location])
+######## These queries above and below work in other notebooks, but do not work in this API :(
+
+    cursor.execute("""SELECT CASE WHEN "Location" = %s THEN "2019 Population" END FROM CitySpire;""", [location])
+    pop= cursor.fetchall()
+    pop = pop[0]
+
+    cursor.execute("""SELECT CASE WHEN "Location" = %s THEN "2019 Rental Rates" END FROM CitySpire;""", [location])
     rent = cursor.fetchall()
-    #rent = rent[0]
+    rent = rent[0]
 
-    cursor.execute("""SELECT "Walk Score" FROM CitySpire WHERE "Location" = %s""", [location])
+    cursor.execute("""SELECT CASE WHEN "Location" = %s THEN "Walk Score" END FROM CitySpire;""", [location])
     walk = cursor.fetchall()
-    #walk = walk[0]
+    walk = walk[0]
 
-    cursor.execute("""SELECT "Livability Score" FROM CitySpire WHERE "Location" = %s""", [location])
+    cursor.execute("""SELECT CASE WHEN "Location" = %s THEN "Livability Score" END FROM CitySpire;;""", [location])
     live = cursor.fetchall()
-    #live = live[0]
+    live = live[0]
 
     #cursor.close()
     #connection.close()
 
     return {
-        "city_name": location,
-        "population": pop,
-        "rent_per_month": rent,
-        "walk_score": walk,
-        "livability_score": live
-    }
+            "city_name": location,
+            "population": 909090,
+            "rent_per_month": 909090,
+            "walk_score": 90,
+            "livability_score": 909090
+        }
