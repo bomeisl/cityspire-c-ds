@@ -21,7 +21,7 @@ load_dotenv()
 
 # Read in data for the DB
 
-df = pd.read_csv("cityspire-c-ds/data/pop_rent_crime_walk_cost_livability_bins.csv")
+df = pd.read_csv("cityspire-c-ds\data\pop_rent_crime_walk_cost_livability_bins.csv")
 
 # Instantiate DB
 
@@ -52,8 +52,8 @@ get_url()
 # Function to write data to a table in the DB
 
 def write_data(df):
-    tablename = 'cityspire'
-    df.to_sql(tablename, connection, if_exists='append', index=False, method='multi')
+    tablename = 'CitySpire'
+    df.to_sql(tablename, connection, if_exists='replace', index=False, method='multi')
 
 # Write the data to a table in the DB
 
@@ -62,7 +62,7 @@ write_data(df)
 # Create read_date function to read data from the table in the DB
 
 def read_data():
-    query = """SELECT * FROM cityspire LIMIT 5"""
+    query = """SELECT * FROM CitySpire LIMIT 5"""
     df = pd.read_sql(query, connection)
     return pprint.pprint(df.to_dict(orient='records'))
 
