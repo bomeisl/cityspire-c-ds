@@ -10,7 +10,14 @@ POST '/location/data'
 
 # Imports
 
+import os
+
+from dotenv import load_dotenv
+import psycopg2
+from psycopg2.extras import execute_values
+import json
 import pandas as pd
+import numpy as np
 import itertools
 
 import logging
@@ -19,7 +26,10 @@ from typing import List, Optional
 from fastapi import APIRouter
 from fastapi.encoders import jsonable_encoder
 from fastapi.responses import JSONResponse
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, Json
+
+
+# Router
 
 log = logging.getLogger(__name__)
 router = APIRouter()
@@ -27,9 +37,18 @@ router = APIRouter()
 
 # Import data
 
-df = pd.read_csv("data/pop_rent_crime_walk_cost_livability_bins.csv")
+#df = pd.read_csv("data/pop_rent_crime_walk_cost_livability_bins.csv")
 
-Locations = list(df.Location.unique())
+
+# Connect to AWS RDS PG DB
+
+load_dotenv()
+DATABASE_URL = os.getenv("DATABASE_URL")
+connection = psycopg2.connect(DATABASE_URL)
+
+# Cursor for making SQL queries
+
+cursor = connection.cursor()
 
 
 # Instantiate LocationDataRequest BaseModel
@@ -37,7 +56,7 @@ Locations = list(df.Location.unique())
 class LocationDataRequest(BaseModel):
     """Input Schema - the user's choice of Location (City, State)"""
 
-    location: str = Field(..., example='Orlando, Florida')
+    location: str = Field(..., example="Orlando, Florida")
 
 
 # Instantiate LocationDataItem BaseModel
@@ -45,22 +64,22 @@ class LocationDataRequest(BaseModel):
 class LocationDataItem(BaseModel):
     """Output Schema - Location information."""
     
-    location: str = Field(..., example = 'Orlando, Florida')
+    city_name: str = Field(..., example = "Orlando, Florida")
     population: int = Field(..., example = 1000000)
     rent_per_month: int = Field(..., example = 1500)
-    walk_score: int = Field(..., example = 98.0)
-    livability_score: float = Field(..., example = 1000)
+    walk_score: int = Field(..., example = 98)
+    livability_score: int = Field(..., example = 1000)
 
-
+    
 # Instantiate LocationDataResponse BaseModel
 
 class LocationDataResponse(BaseModel):
     """Output schema - List of recommended strains."""
 
-    response: LocationDataItem = Field(...)
+    response: Json[LocationDataItem] = Field(...)
 
 
-# Router to make GET request for data on specified location
+# Router to make POST request for data on specified location
 
 @router.post('/location/data', response_model=LocationDataItem)
 async def location_data(location: LocationDataRequest):
@@ -79,19 +98,42 @@ async def location_data(location: LocationDataRequest):
     "livability_score": livability score as a float
     """
 
-    df[df.Population==location].Location.item()
+    # Make sure location paramater is a string in the form of "City, State"
+
+    location = str(location)
+    location = location.replace('location=', "")
+
+
+    # Queries for data response
+
+    #pop_query = """SELECT "2019 Population" FROM CitySpire WHERE "Location" = %s""", [location]
+    #rent_query = """SELECT "2019 Rental Rates" FROM CitySpire WHERE "Location" = %s""", [location]
+    #walk_query = """SELECT "2019 Walk Score" FROM CitySpire WHERE "Location" = %s""", [location]
+    #live_query = """SELECT "2019 Livability Score" FROM CitySpire WHERE "Location" = %s""", [location]
+
+    cursor.execute("""SELECT "2019 Population" FROM CitySpire WHERE "Location" = %s""", [location])
+    pop = cursor.fetchall()
+    #pop = pop[0]
+
+    cursor.execute("""SELECT "2019 Rental Rates" FROM CitySpire WHERE "Location" = %s""", [location])
+    rent = cursor.fetchall()
+    #rent = rent[0]
+
+    cursor.execute("""SELECT "Walk Score" FROM CitySpire WHERE "Location" = %s""", [location])
+    walk = cursor.fetchall()
+    #walk = walk[0]
+
+    cursor.execute("""SELECT "Livability Score" FROM CitySpire WHERE "Location" = %s""", [location])
+    live = cursor.fetchall()
+    #live = live[0]
+
+    #cursor.close()
+    #connection.close()
 
     return {
-        'location': location,
-        'population': df[df.Population==location].Location.item(),
-        'rent_per_month': df[df.RentalRates==location].Location.item(),
-        'walk_score': df[df.WalkScore==location].Location.item(),
-        'livability_score': df[df.LivabilityScore==location].Location.item()
+        "city_name": location,
+        "population": pop,
+        "rent_per_month": rent,
+        "walk_score": walk,
+        "livability_score": live
     }
-        
-        #'location': str(location),
-        #'population': int(df.loc[df['Location'] == location, '2019 Population']),
-        #'rent_per_month': int(df.loc[df['Location'] == location, '2019 Rental Rates']),
-        #'walk_score': int(df.loc[df['Location'] == location, 'Walk Score']),
-        #'livability_score': float(df.loc[df['Location'] == location, 'Livability Score'])
-        

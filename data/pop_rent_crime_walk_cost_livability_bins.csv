@@ -1,4 +1,4 @@
-,Location,Population,RentalRates,Violent crime,Murder and nonnegligent manslaughter,Rape,Robbery,Aggravated assault,Property crime,Burglary,Larceny-theft,Motor vehicle theft,Arson,Crime Rate,WalkScore,Bike Score,Cost of Living Index,LivabilityScore
+,Location,2019 Population,2019 Rental Rates,Violent crime,Murder and nonnegligent manslaughter,Rape,Robbery,Aggravated assault,Property crime,Burglary,Larceny-theft,Motor vehicle theft,Arson,Crime Rate,Walk Score,Bike Score,Cost of Living Index,Livability Score
 0,"Akron, Ohio",197597.0,678.0,1782.0,27.0,181.0,328.0,1246.0,6568.0,1686.0,4305.0,577.0,65.0,8484.440553247267,46,46,90.8,7972.779227752733
 1,"Albany, New York",96460.0,1659.0,736.0,4.0,60.0,189.0,483.0,2919.0,445.0,2315.0,159.0,16.0,7594.857972216462,65,56,101.6,8902.161808783538
 2,"Allentown, Pennsylvania",121442.0,1373.3333333333333,471.0,7.0,64.0,170.0,230.0,2782.0,521.0,2018.0,243.0,5.0,5361.407091451063,70,44,100.2,11127.212689548936
