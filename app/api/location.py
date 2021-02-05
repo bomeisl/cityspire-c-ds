@@ -2,7 +2,7 @@
 
 
 
-"""Route that provides data for each location based on input.
+"""Route that provides data for each location based on input of location name in the form of "City, State".
 
 POST '/location/data'
 """
@@ -15,10 +15,6 @@ import os
 from dotenv import load_dotenv
 import psycopg2
 from psycopg2.extras import execute_values
-import json
-import pandas as pd
-import numpy as np
-import itertools
 
 import logging
 from typing import List, Optional
@@ -34,17 +30,11 @@ from pydantic import BaseModel, Field, Json
 log = logging.getLogger(__name__)
 router = APIRouter()
 
-
-# Import data
-
-#df = pd.read_csv("data/pop_rent_crime_walk_cost_livability_bins.csv")
-
-
 # Connect to AWS RDS PG DB
 
 load_dotenv()
 DATABASE_URL = os.getenv("DATABASE_URL")
-connection = psycopg2.connect("postgres://CitySpire:teamwork!@cityspire-c-ds.c2uishzxxikl.us-east-1.rds.amazonaws.com:5432/DB4API")
+connection = psycopg2.connect(DATABASE_URL)
 
 # Cursor for making SQL queries
 
@@ -56,7 +46,7 @@ cursor = connection.cursor()
 class LocationDataRequest(BaseModel):
     """Input Schema - the user's choice of Location (City, State)"""
 
-    location: str = Field(..., example="Orlando, Florida")
+    location: str = Field(..., example="El Paso, Texas")
 
 
 # Instantiate LocationDataItem BaseModel
@@ -64,7 +54,7 @@ class LocationDataRequest(BaseModel):
 class LocationDataItem(BaseModel):
     """Output Schema - Location information."""
     
-    city_name: str = Field(..., example = "Orlando, Florida")
+    city_name: str = Field(..., example = "Phoenix, Arizona")
     population: int = Field(..., example = 1000000)
     rent_per_month: int = Field(..., example = 1500)
     walk_score: int = Field(..., example = 98)
@@ -102,9 +92,10 @@ async def location_data(location: LocationDataRequest):
 
     location = str(location)
     location = location.replace('location=', "")
+    location = location.replace("'", "")
 
 
-    # Queries for data response - these same queries work in another notebook with the same code, but not here
+    # Queries for data response
 
     #pop_query = """SELECT "2019 Population" FROM CitySpire WHERE "Location" = %s""", [location]
     #rent_query = """SELECT "2019 Rental Rates" FROM CitySpire WHERE "Location" = %s""", [location]
@@ -112,50 +103,34 @@ async def location_data(location: LocationDataRequest):
     #live_query = """SELECT "2019 Livability Score" FROM CitySpire WHERE "Location" = %s""", [location]
 
     cursor.execute("""SELECT "2019 Population" FROM cityspire WHERE "Location" = %s;""", [location])
-    pop = cursor.fetchall()
+    pop = cursor.fetchone()
     #pop = pop[0][0] # This is slice slice the tuple value from the list of tuples
 
     cursor.execute("""SELECT "2019 Rental Rates" FROM cityspire WHERE "Location" = %s;""", [location])
-    rent = cursor.fetchall()
+    rent = cursor.fetchone()
     #rent = rent[0][0] # This is slice slice the tuple value from the list of tuples
 
     cursor.execute("""SELECT "Walk Score" FROM cityspire WHERE "Location" = %s;""", [location])
-    walk = cursor.fetchall()
+    walk = cursor.fetchone()
     #walk = walk[0][0] # This is slice slice the tuple value from the list of tuples
 
     cursor.execute("""SELECT "Livability Score" FROM cityspire WHERE "Location" = %s;""", [location])
-    live = cursor.fetchall()
+    live = cursor.fetchone()
     #live = live[0][0] # This is slice slice the tuple value from the list of tuples
 
     
-    # Close the cursor and connection
+    # Close the cursor and connection (this breaks the API)
 
     #cursor.close()
     #connection.close()
 
 
-    # Trying different return statements for debugging   
+    # Return the data that was requested and queried
 
-    # This returns the static values with no problem, so the POST API works
-
-    #return {
-    #        "city_name": location,
-    #        "population": 287442,
-    #        "rent_per_month": 1597,
-    #        "walk_score": 41,
-    #        "livability_score": 5161
-    #}
-
-    # This returns an empty list (which should contain a tuple of the data queried)
-
-    #return print(pop)
-
-    # This should return the parameters instantiated by fetching the queried data from the DB, but the query returns an empty list
-
-    #return {
-    #    "city_name": location,
-    #    "population": int(pop),
-    #    "rent_per_month": int(rent),
-    #    "walk_score": int(walk),
-    #    "livability_score": int(live)
-    #}
+    return {
+        "city_name": str(location),
+        "population": int(pop[0]),
+        "rent_per_month": int(rent[0]),
+        "walk_score": int(walk[0]),
+        "livability_score": int(live[0])
+    }
