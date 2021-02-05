@@ -2,7 +2,7 @@
 
 
 
-"""Route that provides data for each location based on input.
+"""Route that provides data for each location based on input of location name in the form of "City, State".
 
 POST '/location/data'
 """
@@ -15,10 +15,6 @@ import os
 from dotenv import load_dotenv
 import psycopg2
 from psycopg2.extras import execute_values
-import json
-import pandas as pd
-import numpy as np
-import itertools
 
 import logging
 from typing import List, Optional
@@ -33,12 +29,6 @@ from pydantic import BaseModel, Field, Json
 
 log = logging.getLogger(__name__)
 router = APIRouter()
-
-
-# Import data
-
-#df = pd.read_csv("data/pop_rent_crime_walk_cost_livability_bins.csv")
-
 
 # Connect to AWS RDS PG DB
 
@@ -56,7 +46,7 @@ cursor = connection.cursor()
 class LocationDataRequest(BaseModel):
     """Input Schema - the user's choice of Location (City, State)"""
 
-    location: str = Field(..., example="Orlando, Florida")
+    location: str = Field(..., example="El Paso, Texas")
 
 
 # Instantiate LocationDataItem BaseModel
@@ -64,7 +54,7 @@ class LocationDataRequest(BaseModel):
 class LocationDataItem(BaseModel):
     """Output Schema - Location information."""
     
-    city_name: str = Field(..., example = "Orlando, Florida")
+    city_name: str = Field(..., example = "Phoenix, Arizona")
     population: int = Field(..., example = 1000000)
     rent_per_month: int = Field(..., example = 1500)
     walk_score: int = Field(..., example = 98)
@@ -102,6 +92,7 @@ async def location_data(location: LocationDataRequest):
 
     location = str(location)
     location = location.replace('location=', "")
+    location = location.replace("'", "")
 
 
     # Queries for data response
@@ -111,47 +102,35 @@ async def location_data(location: LocationDataRequest):
     #walk_query = """SELECT "2019 Walk Score" FROM CitySpire WHERE "Location" = %s""", [location]
     #live_query = """SELECT "2019 Livability Score" FROM CitySpire WHERE "Location" = %s""", [location]
 
-#    cursor.execute("""SELECT "2019 Population" FROM CitySpire WHERE "Location" = %s;""", [location])
-#    pop = cursor.fetchall()
-#    pop = pop[0]
-#
-#    cursor.execute("""SELECT "2019 Rental Rates" FROM CitySpire WHERE "Location" = %s;""", [location])
-#    rent = cursor.fetchall()
-#    rent = rent[0]
-#
-#    cursor.execute("""SELECT "Walk Score" FROM CitySpire WHERE "Location" = %s;""", [location])
-#    walk = cursor.fetchall()
-#    walk = walk[0]
-#
-#    cursor.execute("""SELECT "Livability Score" FROM CitySpire WHERE "Location" = %s;""", [location])
-#    live = cursor.fetchall()
-#    live = live[0]
+    cursor.execute("""SELECT "2019 Population" FROM cityspire WHERE "Location" = %s;""", [location])
+    pop = cursor.fetchone()
+    #pop = pop[0][0] # This is slice slice the tuple value from the list of tuples
 
-######## These queries above and below work in other notebooks, but do not work in this API :(
+    cursor.execute("""SELECT "2019 Rental Rates" FROM cityspire WHERE "Location" = %s;""", [location])
+    rent = cursor.fetchone()
+    #rent = rent[0][0] # This is slice slice the tuple value from the list of tuples
 
-    cursor.execute("""SELECT CASE WHEN "Location" = %s THEN "2019 Population" END FROM CitySpire;""", [location])
-    pop= cursor.fetchall()
-    pop = pop[0]
+    cursor.execute("""SELECT "Walk Score" FROM cityspire WHERE "Location" = %s;""", [location])
+    walk = cursor.fetchone()
+    #walk = walk[0][0] # This is slice slice the tuple value from the list of tuples
 
-    cursor.execute("""SELECT CASE WHEN "Location" = %s THEN "2019 Rental Rates" END FROM CitySpire;""", [location])
-    rent = cursor.fetchall()
-    rent = rent[0]
+    cursor.execute("""SELECT "Livability Score" FROM cityspire WHERE "Location" = %s;""", [location])
+    live = cursor.fetchone()
+    #live = live[0][0] # This is slice slice the tuple value from the list of tuples
 
-    cursor.execute("""SELECT CASE WHEN "Location" = %s THEN "Walk Score" END FROM CitySpire;""", [location])
-    walk = cursor.fetchall()
-    walk = walk[0]
-
-    cursor.execute("""SELECT CASE WHEN "Location" = %s THEN "Livability Score" END FROM CitySpire;;""", [location])
-    live = cursor.fetchall()
-    live = live[0]
+    
+    # Close the cursor and connection (this breaks the API)
 
     #cursor.close()
     #connection.close()
 
+
+    # Return the data that was requested and queried
+
     return {
-            "city_name": location,
-            "population": 909090,
-            "rent_per_month": 909090,
-            "walk_score": 90,
-            "livability_score": 909090
-        }
+        "city_name": str(location),
+        "population": int(pop[0]),
+        "rent_per_month": int(rent[0]),
+        "walk_score": int(walk[0]),
+        "livability_score": int(live[0])
+    }

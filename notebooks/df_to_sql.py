@@ -52,8 +52,8 @@ get_url()
 # Function to write data to a table in the DB
 
 def write_data(df):
-    tablename = 'CitySpire'
-    df.to_sql(tablename, connection, if_exists='replace', index=False, method='multi')
+    #tablename = "cityspire"
+    df.to_sql("cityspire", connection, if_exists='replace', index=True, method='multi')
 
 # Write the data to a table in the DB
 
