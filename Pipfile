@@ -14,6 +14,7 @@ sqlalchemy = "*"
 psycopg2-binary = "*"
 pandas = "*"
 python-dotenv = "*"
+jsonify = "*"
 
 [requires]
 python_version = "3"
