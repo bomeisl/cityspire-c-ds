@@ -14,7 +14,6 @@ import sqlalchemy
 import psycopg2
 from psycopg2.extras import execute_values
 import json
-import jsonify
 
 
 # Router
@@ -86,10 +85,9 @@ async def get_table(connection=Depends(get_db)):
     return json.dumps(records)
 
 
-# Elastic Load balancing Health checks
+# Elastic Load Balancing health checks
 
-@router.get('/health')
-async def healthcheck():
+@router.get('/healthcheck')
+def healthcheck():
     msg = ("This is a health check message.")
-    return jsonify({"message": msg})
-    
+    return {"message": msg}
