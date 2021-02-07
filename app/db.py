@@ -14,6 +14,7 @@ import sqlalchemy
 import psycopg2
 from psycopg2.extras import execute_values
 import json
+import jsonify
 
 
 # Router
@@ -24,23 +25,12 @@ router = APIRouter()
 # Load environment variables aka secrets from .env
 
 load_dotenv()
-
-#DB_HOST = os.getenv("DB_HOST")
-#DB_NAME = os.getenv("DB_NAME")
-#DB_USER = os.getenv("DB_USER")
-#DB_PASSWORD = os.getenv("DB_PASSWORD")
-
-#DATABASE_URL = os.environ["DATABASE_URL"]
 DATABASE_URL = os.getenv("DATABASE_URL")
 
 
 # Connect to AWS RDS PG DB with FastAPI on Heroku (Hosted on AWS)
 
 connection = psycopg2.connect(DATABASE_URL)
-
-# This works to connect locally (currently hosted on ElephantSQL, which hosts on AWS)
-
-#connection = psycopg2.connect(dbname=DB_NAME, user=DB_USER, password=DB_PASSWORD, host=DB_HOST, sslmode="require") #DATABASE_URL
 
 
 # Cursor for making SQL queries
@@ -94,3 +84,12 @@ async def get_table(connection=Depends(get_db)):
     cursor.close()
     connection.close()
     return json.dumps(records)
+
+
+# Elastic Load balancing Health checks
+
+@router.get('/health')
+async def healthcheck():
+    msg = ("This is a health check message.")
+    return jsonify({"message": msg})
+    
