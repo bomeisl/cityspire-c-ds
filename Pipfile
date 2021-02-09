@@ -15,6 +15,7 @@ psycopg2-binary = "*"
 pandas = "*"
 python-dotenv = "*"
 jsonify = "*"
+requests = "*"
 
 [requires]
 python_version = "3"
