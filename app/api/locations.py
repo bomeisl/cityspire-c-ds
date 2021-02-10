@@ -10,7 +10,6 @@ GET '/locations'
 # Imports
 
 import pandas as pd
-import itertools
 
 import logging
 from typing import List
