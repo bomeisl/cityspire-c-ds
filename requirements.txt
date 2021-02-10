@@ -4,13 +4,7 @@ uvicorn
 gunicorn
 sqlalchemy
 psycopg2-binary
-websockets
 scikit-learn
 jupyter
 pytest
-dataclasses
 python-dotenv
-websockets
-requests
-plotly
-json

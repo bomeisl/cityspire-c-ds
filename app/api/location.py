@@ -34,6 +34,7 @@ router = APIRouter()
 
 load_dotenv()
 DATABASE_URL = os.getenv("DATABASE_URL")
+#DATABASE_URL = os.getenv['DATABASE_URL'] # for AWS EB Environment Variable
 connection = psycopg2.connect(DATABASE_URL)
 
 # Cursor for making SQL queries
