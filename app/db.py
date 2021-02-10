@@ -24,8 +24,8 @@ router = APIRouter()
 # Load environment variables aka secrets from .env
 
 load_dotenv()
-#DATABASE_URL = os.getenv("DATABASE_URL")
-DATABASE_URL = os.getenv['DATABASE_URL'] # for AWS EB Environment Variable
+DATABASE_URL = os.getenv("DATABASE_URL")
+#DATABASE_URL = os.getenv['DATABASE_URL'] # for AWS EB Environment Variable
 
 # Connect to AWS RDS PG DB with FastAPI on Heroku (Hosted on AWS)
 

@@ -33,8 +33,8 @@ router = APIRouter()
 # Connect to AWS RDS PG DB
 
 load_dotenv()
-#DATABASE_URL = os.getenv("DATABASE_URL")
-DATABASE_URL = os.getenv['DATABASE_URL'] # for AWS EB Environment Variable
+DATABASE_URL = os.getenv("DATABASE_URL")
+#DATABASE_URL = os.getenv['DATABASE_URL'] # for AWS EB Environment Variable
 connection = psycopg2.connect(DATABASE_URL)
 
 # Cursor for making SQL queries
