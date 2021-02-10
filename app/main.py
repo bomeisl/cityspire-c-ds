@@ -56,3 +56,4 @@ app.add_middleware(
 
 if __name__ == '__main__':
     uvicorn.run(app)
+    # Use this command in CLI to run on different port locally: uvicorn app.main:app --reload --port 8080
