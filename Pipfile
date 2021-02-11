@@ -5,6 +5,7 @@ name = "pypi"
 
 [packages]
 pandas = "*"
+numpy = "*"
 fastapi = "*"
 uvicorn = "*"
 gunicorn = "*"
@@ -13,6 +14,11 @@ scikit-learn = "*"
 jupyter = "*"
 pytest = "*"
 python-dotenv = "*"
+logging = "*"
+pydantic = "*"
+typing = "*"
+pickle-mixin = "*"
+matplotlib = "*"
 SQLAlchemy = "*"
 
 [dev-packages]

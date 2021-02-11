@@ -1,10 +1,16 @@
 pandas
+numpy
 fastapi
 uvicorn
 gunicorn
-sqlalchemy
+SQLAlchemy
 psycopg2-binary
 scikit-learn
 jupyter
 pytest
 python-dotenv
+logging
+pydantic
+typing
+pickle-mixin
+matplotlib
