@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "88d52f905a229bb0556cd940d4a50d28221091a86eea15b6f62b5af340eb811f"
+            "sha256": "fbe4dcefce2ac72cd4d78385aba1ce78312920b7ee45a6d5a094429cbf9a556f"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -107,13 +107,6 @@
             ],
             "markers": "python_version >= '3.6'",
             "version": "==1.3.1"
-        },
-        "logging": {
-            "hashes": [
-                "sha256:26f6b50773f085042d301085bd1bf5d9f3735704db9f37c1ce6d8b85c38f2417"
-            ],
-            "index": "pypi",
-            "version": "==0.4.9.6"
         },
         "matplotlib": {
             "hashes": [
@@ -498,14 +491,6 @@
             ],
             "markers": "python_version >= '3.5'",
             "version": "==2.1.0"
-        },
-        "typing": {
-            "hashes": [
-                "sha256:1187fb9c82fd670d10aa07bbb6cfcfe4bdda42d6fab8d5134f04e8c4d0b71cc9",
-                "sha256:283d868f5071ab9ad873e5e52268d611e851c870a2ba354193026f2dfb29d8b5"
-            ],
-            "index": "pypi",
-            "version": "==3.7.4.3"
         },
         "uvicorn": {
             "extras": [
