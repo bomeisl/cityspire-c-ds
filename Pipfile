@@ -7,21 +7,22 @@ name = "pypi"
 pandas = "*"
 numpy = "*"
 fastapi = "*"
-uvicorn = "*"
+uvicorn = {extras = ["standard"], version = "*"}
 gunicorn = "*"
 psycopg2-binary = "*"
 scikit-learn = "*"
-jupyter = "*"
-pytest = "*"
 python-dotenv = "*"
 logging = "*"
 pydantic = "*"
 typing = "*"
 pickle-mixin = "*"
 matplotlib = "*"
-SQLAlchemy = "*"
+sqlalchemy = "*"
 
 [dev-packages]
+jupyter = "*"
+pytest = "*"
+awsebcli = "*"
 
 [requires]
-python_version = "3.8"
+python_version = "3"

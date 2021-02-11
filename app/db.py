@@ -80,8 +80,8 @@ async def get_table(connection=Depends(get_db)):
     select_query = "SELECT * from CitySpire"
     cursor.execute(select_query)
     records = cursor.fetchall()
-    cursor.close()
-    connection.close()
+    #cursor.close()
+    #connection.close()
     return json.dumps(records)
 
 
