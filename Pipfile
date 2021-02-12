@@ -8,14 +8,13 @@ pandas = "*"
 numpy = "*"
 fastapi = "*"
 uvicorn = {extras = ["standard"], version = "*"}
-gunicorn = "*"
 psycopg2-binary = "*"
 scikit-learn = "*"
 python-dotenv = "*"
 pydantic = "*"
 pickle-mixin = "*"
-matplotlib = "*"
 sqlalchemy = "*"
+gunicorn = "*"
 
 [dev-packages]
 jupyter = "*"
