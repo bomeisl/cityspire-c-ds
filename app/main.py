@@ -8,8 +8,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 import uvicorn
 
-from app import db, ml, viz
-from app.api import locations, location
+from app import db, ml, viz, locations, location
 
 
 #Edit your app's title and description. See [https://fastapi.tiangolo.com/tutorial/metadata/](https://fastapi.tiangolo.com/tutorial/metadata/)
