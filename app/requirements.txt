@@ -1,3 +1,4 @@
+python
 pandas
 numpy 
 fastapi 
@@ -12,4 +13,4 @@ gunicorn
 jupyter 
 pytest 
 awsebcli 
-python_version
+
