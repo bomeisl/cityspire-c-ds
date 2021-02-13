@@ -1,1 +1,2 @@
-con = psycopg2.connect('')
+import psycopg2 as db
+con = db.connect('')
