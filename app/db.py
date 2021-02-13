@@ -30,8 +30,6 @@ DATABASE_URL = os.getenv("DATABASE_URL")
 
 # Connect to AWS RDS PG DB with FastAPI on Heroku (Hosted on AWS)
 
-connection = psycopg2.connect('')
-
 
 # Cursor for making SQL queries
 
