@@ -970,6 +970,11 @@
             "markers": "python_version >= '3.7'",
             "version": "==5.0.5"
         },
+        
+        "gunicorn": {
+            "version": "==20.0.4"
+        },
+        
         "wcwidth": {
             "hashes": [
                 "sha256:beb4802a9cebb9144e99086eff703a642a13d6a0052920003a230f3294bbe784",
