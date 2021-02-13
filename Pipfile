@@ -4,24 +4,23 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-pandas = "*"
-numpy = "*"
 fastapi = "*"
-uvicorn = {extras = ["standard"], version = "*"}
-psycopg2-binary = "*"
-scikit-learn = "*"
-python-dotenv = "*"
-pydantic = "*"
-pickle-mixin = "*"
+fastapi-utils = "*"
+uvicorn = "*"
 sqlalchemy = "*"
-gunicorn = "*"
+pytesseract = "*"
+pdf2image = "*"
+pillow = "*"
+psycopg2-binary = "*"
+python-dotenv = "*"
+pypdf2 = "*"
+python-multipart = "*"
+pandas = "*"
+pipx = "*"
 uvloop = "*"
 httptools = "*"
 
 [dev-packages]
 jupyter = "*"
-pytest = "*"
-awsebcli = "*"
 
 [requires]
-python_version = "3"
