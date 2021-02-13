@@ -1,0 +1,15 @@
+pandas
+numpy 
+fastapi 
+uvicorn 
+psycopg2-binary
+scikit-learn
+python-dotenv
+pydantic 
+pickle-mixin 
+sqlalchemy 
+gunicorn 
+jupyter 
+pytest 
+awsebcli 
+python_version
