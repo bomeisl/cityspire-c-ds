@@ -34,7 +34,7 @@ connection = psycopg2.connect(DATABASE_URL)
 
 # Cursor for making SQL queries
 
-cursor = connection.cursor()
+cursor = psycopg2.connect(DATABASE_URL).cursor()
 
 
 # Get a SQLAlchemy database connection (we are using Postgres...)
