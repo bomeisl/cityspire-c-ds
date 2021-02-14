@@ -30,7 +30,7 @@ load_dotenv()
 
 # Connect to AWS RDS PG DB with FastAPI on Heroku (Hosted on AWS)
 
-connection = psycopg2.connect('')
+connection = psycopg2.connect("dbname=PGDATABASE")
 
 # Cursor for making SQL queries
 
