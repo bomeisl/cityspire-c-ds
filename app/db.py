@@ -29,8 +29,12 @@ load_dotenv()
 #DATABASE_URL = os.getenv['DATABASE_URL'] # for AWS EB Environment Variable
 
 # Connect to AWS RDS PG DB with FastAPI on Heroku (Hosted on AWS)
+PGDATABASE = {{ secret.PGDATABASE }}
+PGUSER = {{ secret.PGUSER }}
+PGHOST = {{ secret.PGHOST }}
+PGPASSWORD = {{ secret.PGPASSWORD }}
 
-connection = psycopg2.connect("dbname=secrets.PGDATABASE user=secrets.PGUSER host=secrets.PGHOST password=secrets.PGPASSWORD")
+connection = psycopg2.connect("dbname=PGDATABASE user=PGUSER host=PGHOST password=PGPASSWORD")
 
 # Cursor for making SQL queries
 
